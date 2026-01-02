@@ -16,5 +16,7 @@ int main() {
             break;
         }
     }
+
+    cout<<"HELLO\n";
     return 0;
 }
