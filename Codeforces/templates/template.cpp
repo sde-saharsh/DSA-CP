@@ -7,6 +7,7 @@ using namespace std;
 #define vll vector<ll>
 
 #define rep(i, a, b) for (int i = (a); i < (b); ++i)
+#define repe(i, a, b) for (int i = (a); i <= (b); ++i)
 #define per(i, a, b) for (int i = (a); i >= (b); --i)
 #define all(x) begin(x), end(x)
 #define sz(x) (int)((x).size())

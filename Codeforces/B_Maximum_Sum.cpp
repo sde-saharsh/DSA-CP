@@ -1,33 +1,48 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-#define fastio() ios::sync_with_stdio(false); cin.tie(nullptr);
+#define fastio()                
 #define ll long long
-#define vi vector<int> 
+#define vi vector<int>
 #define vll vector<ll>
 
-#define rep(i, a, b) for (int i = (a); i < (b); ++i)
-#define per(i, a, b) for (int i = (a); i >= (b); --i)
-#define all(x) begin(x), end(x)
-#define sz(x) (int)((x).size())
-
-
-void solve() {
-    int n,k;
-    cin>>n>>k;
+void solve()
+{
+    int n, k;
+    cin >> n >> k;
 
     vll a(n);
-    for(int i=0;i<n;i++) cin>>a[i];
+    for (int i = 0; i < n; i++)
+        cin >> a[i];
 
+    sort(a.begin(),a.end());
+
+    vll preSum(n);
+    preSum[0] = a[0];
+    for(int i=1;i<n;i++){
+        preSum[i] = preSum[i-1] + a[i];
+    }
+
+    ll ans = 0;
+    for(ll first =0;first<=k;first++){
+        ll second = k - first;
+        ll left = first * 2;
+        ll right = n-second -1 ;
+        ll sum = preSum[right] - (left==0?0:preSum[left-1]);
+        ans = max(ans,sum);
+    }
     
+    cout << ans << endl;
 
 }
 
-int main() {
+int main()
+{
     ios::sync_with_stdio(false);
     cin.tie(NULL);
 
     int t;
     cin >> t;
-    while (t--) solve();
+    while (t--)
+        solve();
 }
