@@ -12,7 +12,21 @@ using namespace std;
 
 
 void solve() {
-    
+    vvll a(5,vll(5));
+    rep(i,5){
+        rep(j,5){
+            cin>>a[i][j];
+        }
+    }
+
+    rep(i,5){
+        rep(j,5){
+            if(a[i][j]==1){
+                cout<<abs(2-i) + abs(2-j)<<endl;
+                return;
+            }
+        }
+    }
 }
 
 int main() {
@@ -20,6 +34,6 @@ int main() {
     cin.tie(NULL);
 
     int t=1;
-    cin >> t;
+    // cin >> t;
     while (t--) solve();
 }

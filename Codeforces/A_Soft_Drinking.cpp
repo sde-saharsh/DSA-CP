@@ -12,7 +12,18 @@ using namespace std;
 
 
 void solve() {
-    
+    ll n,k,l,c,d,p,nl,np;
+    cin>>n>>k>>l>>c>>d>>p>>nl>>np;
+
+    ll totalDrinkToasts = (k * l) / nl;
+    ll totalLimeToasts  = c * d;
+    ll totalSaltToasts  = p / np;
+
+    ll totalToasts = min({totalDrinkToasts, totalLimeToasts, totalSaltToasts});
+
+    cout << totalToasts / n << '\n';
+
+
 }
 
 int main() {
@@ -20,6 +31,6 @@ int main() {
     cin.tie(NULL);
 
     int t=1;
-    cin >> t;
+    // cin >> t;
     while (t--) solve();
 }
