@@ -30,6 +30,7 @@ void solve() {
         x = x/10;
     }
     reverse(a);
+
     
 
 }
