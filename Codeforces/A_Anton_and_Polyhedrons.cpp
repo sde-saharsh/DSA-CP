@@ -10,34 +10,24 @@ using namespace std;
 #define rep(i,n) for(int i=0;i<n;i++)
 #define per(i,n) for(int i=n-1;i>=0;i--)
 
-void reverse(vector<long long>& a){
-    int n = a.size();
-    for(int i=0;i<n/2;i++){
-        int temp = a[i];
-        a[i] = a[n-i-1];
-        a[n-i-1] = temp;
-    }
-}
 
 void solve() {
     ll n;
     cin>>n;
+    
+    ll ans = 0;
 
-    vll a;
-    int count = 1;
-
-    while(n>0){
-        int temp = (n%10)*count;
-        if(temp!=0) a.push_back(temp);
-        count*=10;
-        n = n/10;
+    while(n--){
+        string s;
+        cin>>s;
+        if(s[0]=='T') ans += 4;
+        else if(s[0]=='C') ans += 6;
+        else if(s[0]=='O') ans += 8;
+        else if(s[0]=='D') ans += 12;
+        else ans += 20;
     }
 
-    cout<<a.size()<<endl;
-    for(int i=0;i<a.size();i++){
-        cout<<a[i]<<" ";
-    }
-    cout<<endl;
+    cout<<ans<<endl;
 
 }
 
@@ -46,6 +36,6 @@ int main() {
     cin.tie(NULL);
 
     int t=1;
-    cin >> t;
+    // cin >> t;
     while (t--) solve();
 }

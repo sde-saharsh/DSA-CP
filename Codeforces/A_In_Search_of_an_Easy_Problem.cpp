@@ -10,42 +10,32 @@ using namespace std;
 #define rep(i,n) for(int i=0;i<n;i++)
 #define per(i,n) for(int i=n-1;i>=0;i--)
 
-void reverse(vector<long long>& a){
-    int n = a.size();
-    for(int i=0;i<n/2;i++){
-        int temp = a[i];
-        a[i] = a[n-i-1];
-        a[n-i-1] = temp;
-    }
-}
 
 void solve() {
     ll n;
     cin>>n;
 
-    vll a;
-    int count = 1;
-
-    while(n>0){
-        int temp = (n%10)*count;
-        if(temp!=0) a.push_back(temp);
-        count*=10;
-        n = n/10;
+    vll a(n);
+    bool flag = true;
+    for(int i=0;i<n;i++){
+        cin>>a[i];
+        if(a[i]==1) flag = false;
     }
 
-    cout<<a.size()<<endl;
-    for(int i=0;i<a.size();i++){
-        cout<<a[i]<<" ";
+    if(flag){
+        cout<<"EASY"<<endl;
+    } else{
+        cout<<"HARD"<<endl;
     }
-    cout<<endl;
 
-}
+
+}   
 
 int main() {
     ios::sync_with_stdio(false);
     cin.tie(NULL);
 
     int t=1;
-    cin >> t;
+    // cin >> t;
     while (t--) solve();
 }
