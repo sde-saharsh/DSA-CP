@@ -5,30 +5,13 @@ using namespace std;
 #define ll long long
 #define vi vector<int> 
 #define vll vector<ll>
+#define vvll vector<vector<ll>>
 
 #define rep(i,n) for(int i=0;i<n;i++)
 #define per(i,n) for(int i=n-1;i>=0;i--)
 
 
 void solve() {
-    int n;
-    cin>>n;
-
-    ll a;
-    vector<pair<ll,ll>> v;
-
-    rep(i,n){
-        cin>>a;
-        v.push_back({a,i});
-    }
-
-    vll preSum(n);
-    preSum[0] = v[0].first;
-    rep(i,n){
-        preSum[i] = preSum[i-1] + v[i];
-    }
-
-    
     
 }
 
@@ -36,7 +19,7 @@ int main() {
     ios::sync_with_stdio(false);
     cin.tie(NULL);
 
-    int t;
+    int t=1;
     cin >> t;
     while (t--) solve();
 }
