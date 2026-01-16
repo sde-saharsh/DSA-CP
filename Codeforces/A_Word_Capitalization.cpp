@@ -15,15 +15,9 @@ void solve() {
     string s;
     cin>>s;
 
-    set<char> freq;
-    for(char c:s){
-        freq.insert(c);
-    }
-    if(freq.size()%2==0){
-        cout<<"CHAT WITH HER!"<<endl;
-    } else{
-        cout<<"IGNORE HIM!"<<endl;
-    }
+    s[0] = toupper(s[0]);
+    cout<<s<<endl;
+
 }
 
 int main() {
