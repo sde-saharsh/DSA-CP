@@ -14,7 +14,18 @@ ll n,m;
 vector<int> a;
 
 bool canMake(ll x){
-    
+     int prev = 0;
+        for (int i = 0; i < n; i++) {
+            if (a[i] + x < m) {
+                if (a[i] + x < prev) return false;
+                prev = max(prev, a[i]);
+            } else {
+                int wrap = (a[i] + x) % m;
+                if (prev > wrap)
+                    prev = max(prev, a[i]);
+            }
+        }
+        return true;
 }
 
 void solve() {
@@ -26,7 +37,7 @@ void solve() {
     ll right = m-1;
     ll ans = -1;
 
-    while(left<right){
+    while(left<=right){
         ll mid = left + (right-left)/2;
         if(canMake(mid)){
             ans = mid;
