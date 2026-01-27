@@ -12,23 +12,21 @@ using namespace std;
 
 
 void solve() {
-    string table;
-    cin >> table;
+    int n;
+    cin >> n;
 
-    char tableRank = table[0];
-    char tableSuit = table[1];
+    int height = 0;
+    int used = 0;
 
-    for (int i = 0; i < 5; i++) {
-        string card;
-        cin >> card;
-
-        if (card[0] == tableRank || card[1] == tableSuit) {
-            cout << "YES";
-            return ;
-        }
+    for (int i = 1; ; i++) {
+        int cubes = i * (i + 1) / 2;  
+        if (used + cubes > n)
+            break;
+        used += cubes;
+        height++;
     }
 
-    cout << "NO";
+    cout << height << endl;
     return ;
 }
 
